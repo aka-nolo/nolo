@@ -55,8 +55,9 @@ Brand and Apps Development · Video Development.
 - **Render**: el `.webp` (≈1500 px de ancho) en `public/renders/<proyecto>-NN.webp` + una línea en `RENDERS` de `data.js`.
   Los 17 actuales salieron de la galería de formwrks.co (`form-design-website/src/data/works.js`),
   **descargados al repo** para no depender de Form. Se descartaron los de nombre WhatsApp/ChatGPT y Cartagena (IA).
-- **Sitio web**: captura 16:10 (o más alta: hace scroll al pasar el mouse) en `public/sites/` + un objeto en `SITES`.
-  Las capturas se toman con Chrome real: formwrks.co y tech piden «TAP» y Chrome sin ventana sale en blanco.
+- **Sitio web**: portada 3:2 + grabación MP4 (~12 s, 960 px) en `public/sites/` + un objeto en `SITES`. Como en la
+  referencia: al pasar el cursor la portada se oscurece y la grabación aparece adentro; en celular se reproduce al verla.
+  Grabar con `tools/` (ver su README). formwrks.co = carrusel de proyectos; tech = BIM Bridge abierto; NOPE = /work.
 - **Video**: un objeto en `FILMS` con el id de Vimeo y `start` (segundo donde empieza el fragmento; dura 9 s, `FRAG` en main.js).
   Vimeo de NOPE es cuenta **estándar**: no hay modo `background=1`; va autoplay silenciado + `#t=`.
 - **App**: logo en `public/logos/` (versión clara: las tarjetas son café) + un objeto en `APPS`.
@@ -90,9 +91,16 @@ Brand and Apps Development · Video Development.
 - [ ] Manuel: confirmar retrato, qué renders y qué videos quedan, y pasar más renders.
 - [ ] Manuel: enlace de agenda real para «Schedule a call» (hoy cae en WhatsApp).
 - [x] `og:image` absoluta a aka-nolo.github.io/nolo. Si cambia el dominio, actualizarla en index.html.
+- [ ] **nolo.formwrks.co** (pedido de Manuel): falta (1) `gh api -X PUT repos/aka-nolo/nolo/pages -f cname=nolo.formwrks.co`
+      y (2) `vercel dns add formwrks.co nolo CNAME aka-nolo.github.io --scope formwrks`. El clasificador bloquea cambios de
+      DNS: necesita permiso de Manuel. Después: `og:image` a nolo.formwrks.co y forzar HTTPS en Pages.
 - [ ] Opcional: dominio propio (p. ej. nolo.co / manuelrestrepo.co) apuntado a Pages — requiere comprarlo Manuel.
 
 ## Log
+- 2026-11-04 — Correcciones de Manuel: «IDEA TO IMAGE» ya no llena la pantalla (cuadro apaisado de 44vw) y usa los
+  4 renders más nítidos (`GAP` en data.js); se cambiaron 3 renders flojos del carrusel por 5 mejores (medidos por
+  nitidez); sitios con portada + grabación al pasar el cursor, recuadros más chicos; apps solo con isotipo sin fondo;
+  «Formwrks» y «Nope». Pendiente: subdominio nolo.formwrks.co (el clasificador bloqueó el DNS, ver Pendientes).
 - 2026-11-04 — Publicado: https://aka-nolo.github.io/nolo/ (repo público, historial reescrito sin notas internas, con OK de Manuel).
 - 2026-11-04 — v1 construida y probada local (escritorio y 390 px): sin errores de carga, Vimeo reproduce los fragmentos
   en secuencia, galería con ESC/flechas/deslizar. Repo `aka-nolo/nolo` creado y pusheado.

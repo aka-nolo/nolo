@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // NOLO — content. Everything the site shows lives here.
 // To add a render: drop the .webp in /public/renders and add one line to RENDERS.
-// To add a website: drop a tall screenshot in /public/sites and add one object to SITES.
+// To add a website: a cover image (3:2) + a short screen recording (mp4, ~12 s) in /public/sites, and one object in SITES.
 // To add a film: add one object to FILMS (Vimeo id + start second of the fragment).
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -17,6 +17,11 @@ window.NOLO = {
 
   // Architectural & BIM Development — renders taken from concept to a mature design stage.
   RENDERS: [
+    { src: "renders/alameda-house-03.webp",   project: "Alameda House",   year: 2024, note: "Brick façade and planted balconies" },
+    { src: "renders/pinewood-house-03.webp",  project: "Pinewood House",  year: 2024, note: "Garden gallery" },
+    { src: "renders/punta-guaca-03.webp",     project: "Punta Guaca",     year: 2026, note: "Cabin on the hillside" },
+    { src: "renders/summit-club-03.webp",     project: "Summit Club",     year: 2025, note: "Lounge and bar" },
+    { src: "renders/pinewood-house-04.webp",  project: "Pinewood House",  year: 2024, note: "Open living toward the forest" },
     { src: "renders/summit-club-01.webp",     project: "Summit Club",     year: 2025, note: "Indoor golf club · concept, design, visualization" },
     { src: "renders/pinewood-house-01.webp",  project: "Pinewood House",  year: 2024, note: "House among pines · design, visualization" },
     { src: "renders/nordic-house-01.webp",    project: "Nordic House",    year: 2024, note: "Board-formed concrete · design, visualization" },
@@ -24,24 +29,25 @@ window.NOLO = {
     { src: "renders/alameda-house-01.webp",   project: "Alameda House",   year: 2024, note: "Brick residential building · design, visualization" },
     { src: "renders/padel-pavilion-01.webp",  project: "Padel Pavilion",  year: 2025, note: "Two gabled halls · concept, design, visualization" },
     { src: "renders/amber-house-01.webp",     project: "Amber House",     year: 2024, note: "Continuous interior · design, visualization" },
-    { src: "renders/walnut-house-01.webp",    project: "Walnut House",    year: 2026, note: "Walnut and dark stone · design, visualization" },
     { src: "renders/olive-house-01.webp",     project: "Olive House",     year: 2025, note: "Open-plan apartment · design, visualization" },
     { src: "renders/summit-club-02.webp",     project: "Summit Club",     year: 2025, note: "Lounge interior" },
     { src: "renders/pinewood-house-02.webp",  project: "Pinewood House",  year: 2024, note: "Living room" },
-    { src: "renders/nordic-house-02.webp",    project: "Nordic House",    year: 2024, note: "Bathroom, warm plaster and timber" },
     { src: "renders/punta-guaca-02.webp",     project: "Punta Guaca",     year: 2026, note: "Cabins over the water" },
     { src: "renders/alameda-house-02.webp",   project: "Alameda House",   year: 2024, note: "Apartment living room" },
     { src: "renders/amber-house-02.webp",     project: "Amber House",     year: 2024, note: "Kitchen" },
-    { src: "renders/walnut-house-02.webp",    project: "Walnut House",    year: 2026, note: "Kitchen island" },
     { src: "renders/olive-house-02.webp",     project: "Olive House",     year: 2025, note: "Living room" },
   ],
+
+  // The pinned "IDEA TO IMAGE" frame cycles through these (pick the sharpest renders).
+  GAP: ["renders/alameda-house-03.webp", "renders/pinewood-house-03.webp", "renders/punta-guaca-03.webp", "renders/pinewood-house-04.webp"],
 
   // Website Development
   SITES: [
     {
       name: "FORM — Design Studio",
       url: "https://formwrks.co/",
-      shot: "sites/formwrks.webp",
+      cover: "sites/formwrks-cover.webp", video: "sites/formwrks.mp4", poster: "sites/formwrks-poster.jpg",
+      shows: "Scrolling the projects on the home page",
       blurb: "The site of my architecture and design studio. A single scroll that sells spaces the way a film would: projects first, words second.",
       stack: "React · GSAP · Vercel",
       services: ["Art direction", "Web design", "Development", "CMS"],
@@ -50,7 +56,8 @@ window.NOLO = {
     {
       name: "FORM — Technology",
       url: "https://tech.formwrks.co/",
-      shot: "sites/tech-formwrks.webp",
+      cover: "sites/tech-cover.webp", video: "sites/tech.mp4", poster: "sites/tech-poster.jpg",
+      shows: "The BIM Bridge product, opened",
       blurb: "The technology face of the studio: Revit plugins, BIM automation and internal software, explained for the people who buy them.",
       stack: "Static · Vercel",
       services: ["Positioning", "Web design", "Development"],
@@ -59,7 +66,8 @@ window.NOLO = {
     {
       name: "NOPE Studios",
       url: "https://www.nopestudios.co/",
-      shot: "sites/nopestudios.webp",
+      cover: "sites/nopestudios-cover.webp", video: "sites/nope.mp4", poster: "sites/nope-poster.jpg",
+      shows: "The work index",
       blurb: "A production company that lets the films speak. Built around the Vimeo library, with a private back office behind the same door.",
       stack: "TanStack Start · Supabase · Vercel",
       services: ["Brand", "Web design", "Development", "Back office"],
@@ -72,8 +80,8 @@ window.NOLO = {
     { name: "Raven",  logo: "logos/raven.svg", line: "An AI project manager for construction that reads the site's WhatsApp groups and keeps the work on track.", kind: "Product · Brand" },
     { name: "Meka",   logo: "logos/meka.svg",  line: "A copilot for motorcycle service advisors: four photos and a voice note become a signed work order.", kind: "Product · Brand" },
     { name: "Melo",   logo: "logos/melo.svg",  line: "On-call crew booking for film productions — who is free today, confirmed in one tap.", kind: "Product · Brand" },
-    { name: "FORM Internal", logo: "logos/form.svg", line: "The studio's operating system: CRM, quotes, contracts, schedules and a wiki, with AI agents inside.", kind: "Internal platform" },
-    { name: "NOPE Internal", logo: "logos/nope.svg", line: "The back office of a production company: projects, quotes and the film library in one place.", kind: "Internal platform" },
+    { name: "Formwrks", logo: "logos/form.svg", line: "The studio's operating system: CRM, quotes, contracts, schedules and a wiki, with AI agents inside.", kind: "Internal platform" },
+    { name: "Nope", logo: "logos/nope.svg", line: "The back office of a production company: projects, quotes and the film library in one place.", kind: "Internal platform" },
   ],
 
   // Video Development — Director's showreel. `start` = second where the fragment begins.

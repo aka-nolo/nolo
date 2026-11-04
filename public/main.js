@@ -168,7 +168,7 @@
   gsap.to(".hero__title", { yPercent: -14, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
 
   /* ── Gap: "IDEA TO IMAGE" pinned reveal ────────────────────── */
-  const gapImgs = D.RENDERS.slice(0, 4).map((r) => r.src);
+  const gapImgs = D.GAP || D.RENDERS.slice(0, 4).map((r) => r.src);
   const gapImg = $(".gap__media img");
   const mm = gsap.matchMedia();
   mm.add("(min-width: 821px)", () => {
@@ -180,8 +180,8 @@
     });
     tl.to(".gap__a", { xPercent: -60, ease: "none" }, 0)
       .to(".gap__b", { xPercent: 40, ease: "none" }, 0)
-      .to(".gap__media", { width: "100vw", height: "100vh", aspectRatio: "auto", ease: "power2.in" }, 0)
-      .to(".gap__media img", { filter: "brightness(.55)", ease: "none" }, 0.3)
+      .to(".gap__media", { width: "44vw", height: "29vw", ease: "power2.inOut" }, 0)
+      .to(".gap__media img", { filter: "brightness(.7)", ease: "none" }, 0.35)
       .from(".gap__copy", { opacity: 0, y: 30, ease: "none", duration: 0.3 }, 0.55);
   });
   mm.add("(max-width: 820px)", () => {
@@ -262,7 +262,7 @@
   lb.addEventListener("touchstart", (e) => (tx = e.touches[0].clientX), { passive: true });
   lb.addEventListener("touchend", (e) => { if (tx == null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) lbShow(lbIdx + (dx < 0 ? 1 : -1)); tx = null; });
 
-  /* ── Websites ──────────────────────────────────────────────── */
+  /* ── Websites: cover + the live site plays inside on hover (molde: works_home) ── */
   const sitesList = $(".sites__list");
   D.SITES.forEach((s, i) => {
     const host = new URL(s.url).host.replace(/^www\./, "");
@@ -270,14 +270,19 @@
     el.className = "site rv";
     el.innerHTML = `
       <a class="site__screen" href="${s.url}" target="_blank" rel="noopener" data-cursor="visit">
-        <div class="site__chrome"><i></i><i></i><i></i><span class="mono">${host}</span></div>
-        <div class="site__view"><img src="${s.shot}" alt="${s.name} — homepage" loading="lazy" /></div>
-        <span class="btn btn--dark site__visit">Visit live <span class="btn__ico">↗</span></span>
+        <img class="site__cover" src="${s.cover}" alt="${s.name}" loading="lazy" />
+        <div class="site__shade"></div>
+        <div class="site__player">
+          <div class="site__chrome"><i></i><i></i><i></i><span class="mono">${host}</span></div>
+          <video muted loop playsinline preload="none" poster="${s.poster}"><source src="${s.video}" type="video/mp4" /></video>
+        </div>
+        <span class="site__hint mono">(Hover to preview)</span>
       </a>
       <div class="site__info">
         <div class="site__index mono"><span>(${pad(i + 1)})</span><span>/${pad(D.SITES.length)}</span></div>
         <h3 class="site__name">${s.name}</h3>
         <p class="site__blurb">${s.blurb}</p>
+        <p class="site__shows mono">▶ ${s.shows}</p>
         <dl class="site__meta">
           <div><dt>Services</dt><dd>${s.services.map((x) => `<span class="tag">${x}</span>`).join("")}</dd></div>
           <div><dt>Built with</dt><dd>${s.stack}</dd></div>
@@ -286,20 +291,19 @@
         </dl>
       </div>`;
     sitesList.appendChild(el);
-    const scr = $(".site__screen", el), img = $(".site__view img", el), view = $(".site__view", el);
-    const measure = () => {
-      const over = img.getBoundingClientRect().height - view.getBoundingClientRect().height;
-      img.classList.toggle("is-tall", over > 8);
-      scr.style.setProperty("--scroll-to", `-${Math.max(0, over)}px`);
-    };
-    img.complete ? measure() : img.addEventListener("load", measure);
-    window.addEventListener("resize", measure);
-    if (finePointer && !reduce) {
+    const scr = $(".site__screen", el), video = $("video", el);
+    const on = () => { scr.classList.add("is-playing"); video.play().catch(() => {}); };
+    const off = () => { scr.classList.remove("is-playing"); video.pause(); };
+    if (finePointer) {
+      scr.addEventListener("pointerenter", on);
+      scr.addEventListener("pointerleave", off);
       gsap.set(scr, { transformPerspective: 1200 });
-      const rx = gsap.quickTo(scr, "rotationY", { duration: 0.6, ease: "power3" });
-      const ry = gsap.quickTo(scr, "rotationX", { duration: 0.6, ease: "power3" });
-      scr.addEventListener("pointermove", (e) => { const b = scr.getBoundingClientRect(); rx(((e.clientX - b.left) / b.width - 0.5) * 6); ry(-((e.clientY - b.top) / b.height - 0.5) * 6); });
-      scr.addEventListener("pointerleave", () => { rx(0); ry(0); });
+      const rx = gsap.quickTo($(".site__player", el), "rotationY", { duration: 0.6, ease: "power3" });
+      const ry = gsap.quickTo($(".site__player", el), "rotationX", { duration: 0.6, ease: "power3" });
+      scr.addEventListener("pointermove", (e) => { const b = scr.getBoundingClientRect(); rx(((e.clientX - b.left) / b.width - 0.5) * 8); ry(-((e.clientY - b.top) / b.height - 0.5) * 8); });
+    } else {
+      // Touch: no hover, so the preview plays while the card is on screen.
+      new IntersectionObserver(([e]) => (e.isIntersecting ? on() : off()), { threshold: 0.6 }).observe(scr);
     }
   });
 
