@@ -90,11 +90,10 @@ Brand and Apps Development · Video Development.
       sube `public/` en cada push a `main`. Si algún día hay Vercel personal, `vercel.json` ya está listo.
 - [ ] Manuel: confirmar retrato, qué renders y qué videos quedan, y pasar más renders.
 - [ ] Manuel: enlace de agenda real para «Schedule a call» (hoy cae en WhatsApp).
-- [x] `og:image` absoluta a aka-nolo.github.io/nolo. Si cambia el dominio, actualizarla en index.html.
-- [ ] **nolo.formwrks.co** (pedido de Manuel): falta (1) `gh api -X PUT repos/aka-nolo/nolo/pages -f cname=nolo.formwrks.co`
-      y (2) `vercel dns add formwrks.co nolo CNAME aka-nolo.github.io --scope formwrks`. El clasificador bloquea cambios de
-      DNS: necesita permiso de Manuel. Después: `og:image` a nolo.formwrks.co y forzar HTTPS en Pages.
-- [ ] Opcional: dominio propio (p. ej. nolo.co / manuelrestrepo.co) apuntado a Pages — requiere comprarlo Manuel.
+- [x] `og:image` absoluta a nolo.formwrks.co. Si cambia el dominio, actualizarla en index.html.
+- [x] **nolo.formwrks.co** (2026-11-04): CNAME en el Vercel de Form (`rec_39e80b23acfea45752659db0`) → `aka-nolo.github.io`;
+      dominio asignado en Pages. El hosting sigue en GitHub personal: si Form cierra, solo se mueve ese registro DNS.
+      ⚠️ `gh api` con Pages devolvió 404 con la cuenta equivocada: usar `GH_TOKEN=$(gh auth token --user aka-nolo)`.
 
 ## Log
 - 2026-11-04 — Correcciones de Manuel: «IDEA TO IMAGE» ya no llena la pantalla (cuadro apaisado de 44vw) y usa los
