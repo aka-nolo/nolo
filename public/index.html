@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nolo — Manuel Restrepo · Showreel</title>
+  <meta name="description" content="Nolo is the showreel of Manuel Restrepo — architect, creative director and AEC developer. Architecture & BIM, websites, brands & apps, and films." />
+  <meta property="og:title" content="Nolo — Manuel Restrepo · Showreel" />
+  <meta property="og:description" content="Architect, creative director and AEC developer. Spaces, software and films." />
+  <meta property="og:image" content="img/og.jpg" />
+  <meta name="theme-color" content="#1F1A14" />
+  <link rel="icon" type="image/svg+xml" href="brand/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Loader / transition screen -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__logo"><img src="brand/nolo-crema.svg" alt="" /></div>
+    <div class="loader__count mono"><span id="loaderCount">0</span>%</div>
+  </div>
+
+  <!-- Film grain -->
+  <div class="grain" aria-hidden="true"></div>
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true"><span class="cursor__label mono"></span></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <a href="#top" class="nav__logo" aria-label="Nolo — home"><img src="brand/nolo-cafe.svg" alt="nolo" /></a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#renders">Architecture</a>
+      <a href="#websites">Websites</a>
+      <a href="#brands">Brands &amp; Apps</a>
+      <a href="#showreel">Showreel</a>
+    </nav>
+    <div class="nav__right">
+      <button class="sound" type="button" aria-pressed="false" aria-label="Toggle sound">
+        <span class="sound__bars"><i></i><i></i><i></i><i></i></span>
+      </button>
+      <a class="btn btn--dark js-call" href="#" target="_blank" rel="noopener">Schedule a call <span class="btn__ico">↗</span></a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ═════════ HERO ═════════ -->
+    <section class="hero light" data-theme="light">
+      <div class="hero__bg" aria-hidden="true">
+        <img class="hero__bglogo" src="brand/nolo-cafe.svg" alt="" />
+      </div>
+
+      <div class="hero__grid">
+        <div class="hero__aside">
+          <p class="hero__intro">I'm Manuel Restrepo — an architect who directs films and builds software for the people who design and build. This is my showreel.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--dark js-call" href="#" target="_blank" rel="noopener">Schedule a call <span class="btn__ico">↗</span></a>
+            <a class="btn btn--line js-wa" href="#" target="_blank" rel="noopener">WhatsApp <span class="btn__ico">↗</span></a>
+            <a class="btn btn--line js-mail" href="#">Email <span class="btn__ico">↗</span></a>
+          </div>
+        </div>
+
+        <h1 class="hero__title">
+          <span class="line"><span class="word">Spaces,</span> <span class="word">software</span></span>
+          <span class="line"><span class="word">and</span> <span class="word">films</span> <span class="word">that</span></span>
+          <span class="line"><span class="word">move</span> <span class="word hero__wink">people</span></span>
+        </h1>
+
+        <figure class="hero__portrait" data-cursor="hi!">
+          <div class="hero__halo" aria-hidden="true"></div>
+          <img src="img/manuel-cutout.webp" alt="Manuel Restrepo" />
+          <figcaption class="mono">(Manuel Restrepo — Medellín, CO · works remote)</figcaption>
+        </figure>
+
+        <p class="hero__tag mono">(Architect · Creative director · AEC developer)</p>
+      </div>
+
+      <div class="disciplines">
+        <p class="disciplines__label mono"><span class="dot"></span>Four ways to work with me</p>
+        <ul class="disciplines__list">
+          <li><a href="#renders"><span class="mono">01</span>Architectural &amp; BIM Development</a></li>
+          <li><a href="#websites"><span class="mono">02</span>Website Development</a></li>
+          <li><a href="#brands"><span class="mono">03</span>Brand &amp; Apps Development</a></li>
+          <li><a href="#showreel"><span class="mono">04</span>Video Development</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═════════ RENDERS (the "gap") ═════════ -->
+    <section class="gap dark" id="renders" data-theme="dark">
+      <div class="gap__pin">
+        <div class="gap__media"><img src="renders/summit-club-01.webp" alt="" /></div>
+        <h2 class="gap__title">
+          <span class="gap__a">IDEA</span><span class="gap__b">TO IMAGE</span>
+        </h2>
+        <p class="gap__copy">Architecture taken from the first sketch to a mature design stage — modeled in BIM, resolved at every scale, and rendered so a client can stand inside it before it exists.</p>
+      </div>
+
+      <div class="reel">
+        <div class="reel__head">
+          <p class="mono label"><span class="dot dot--light"></span>01 — Architectural &amp; BIM Development</p>
+          <p class="reel__count mono"><span id="renderIdx">01</span> / <span id="renderTotal">00</span></p>
+        </div>
+
+        <div class="reel__stage" data-cursor="enlarge">
+          <div class="reel__frames"></div>
+          <div class="reel__caption">
+            <p class="reel__project"></p>
+            <p class="reel__note mono"></p>
+          </div>
+          <div class="reel__bar"><i></i></div>
+        </div>
+
+        <div class="reel__controls">
+          <button class="ctrl" type="button" data-act="prev" aria-label="Previous render">←</button>
+          <button class="ctrl ctrl--play" type="button" data-act="toggle" aria-label="Pause sequence"><span class="ctrl__pause">❚❚</span><span class="ctrl__play">▶</span></button>
+          <button class="ctrl" type="button" data-act="next" aria-label="Next render">→</button>
+          <div class="reel__thumbs" role="list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ WEBSITES ═════════ -->
+    <section class="sites light" id="websites" data-theme="light">
+      <div class="section-head">
+        <p class="mono label"><span class="dot"></span>02 — Website Development</p>
+        <h2 class="section-title">Sites that sell<br />the work for you.</h2>
+        <p class="section-sub">Designed and built end to end — strategy, art direction and code. Hover a screen to scroll it, click to visit it live.</p>
+      </div>
+      <div class="sites__list"></div>
+    </section>
+
+    <!-- ═════════ BRANDS & APPS ═════════ -->
+    <section class="brands dark" id="brands" data-theme="dark">
+      <div class="section-head">
+        <p class="mono label"><span class="dot dot--light"></span>03 — Brand &amp; Apps Development</p>
+        <h2 class="section-title">Products with<br />a face of their own.</h2>
+        <p class="section-sub">Internal apps and the identities around them — named, drawn and built in house. They are private demos, so here they are shown by their marks only.</p>
+      </div>
+      <ul class="brands__grid"></ul>
+    </section>
+
+    <!-- ═════════ SHOWREEL (project journey) ═════════ -->
+    <section class="journey dark" id="showreel" data-theme="dark">
+      <div class="journey__head">
+        <p class="mono label"><span class="dot dot--light"></span>04 — Video Development</p>
+        <h2 class="journey__title">DIRECTOR'S <span>SHOWREEL</span></h2>
+        <p class="section-sub">Music videos directed with NOPE Studios, the production company I co-founded. A short fragment of each plays in sequence — open any of them to watch it whole.</p>
+      </div>
+      <div class="journey__body">
+        <ol class="journey__steps"></ol>
+        <div class="journey__screen">
+          <div class="journey__frame">
+            <img class="journey__poster" alt="" />
+            <div class="journey__player"></div>
+            <div class="journey__hud mono"><span class="journey__now"></span><span class="journey__time"></span></div>
+          </div>
+          <div class="journey__progress"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ FAQ ═════════ -->
+    <section class="faq" data-theme="dark">
+      <div class="faq__intro">
+        <p class="mono label"><span class="dot dot--light"></span>Before we talk</p>
+        <h2 class="faq__title">What you might want to know first.</h2>
+      </div>
+      <div class="faq__list">
+        <details>
+          <summary>What can I hire you for?<span class="faq__plus"></span></summary>
+          <div><p>Four things: architectural design and BIM (Revit modeling, documentation and renders), websites, brands and internal apps, and video — from concept and direction to the final cut. Clients usually come for one and stay for another.</p></div>
+        </details>
+        <details>
+          <summary>Do you build software for architecture and construction?<span class="faq__plus"></span></summary>
+          <div><p>Yes. I write Revit plugins in C# (.NET, Revit 2023–2027), automate BIM workflows with Dynamo and Python, and build Power Apps and AI agents for AEC teams. Because I'm an architect, you don't have to translate your model, your standards or your deadlines.</p></div>
+        </details>
+        <details>
+          <summary>Where are you, and how do we work together?<span class="faq__plus"></span></summary>
+          <div><p>I work remotely in English and Spanish, with teams in Norway, Iceland and Latin America. Clear scope up front, a working draft early, and documentation at handover.</p></div>
+        </details>
+        <details>
+          <summary>How do we start?<span class="faq__plus"></span></summary>
+          <div><p>Book a short call or write to me on WhatsApp. Tell me what you're building and when you need it — I'll come back with a scope and a plan.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ═════════ CTA ═════════ -->
+    <section class="cta dark" data-theme="dark">
+      <div class="cta__media" aria-hidden="true"><img src="renders/nordic-house-01.webp" alt="" /></div>
+      <div class="cta__inner">
+        <p class="cta__line cta__l1">LET'S BUILD</p>
+        <p class="cta__line cta__l2">SOMETHING</p>
+        <p class="cta__line cta__l3">THAT MOVES</p>
+        <p class="cta__line cta__l4"><span class="cta__arrow">→</span> PEOPLE</p>
+        <div class="cta__btns">
+          <a class="btn btn--cream btn--big js-call" href="#" target="_blank" rel="noopener">Schedule a call <span class="btn__ico">↗</span></a>
+          <a class="btn btn--ghost btn--big js-wa" href="#" target="_blank" rel="noopener">WhatsApp <span class="btn__ico">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═════════ FOOTER ═════════ -->
+  <footer class="footer" data-theme="dark">
+    <div class="footer__top">
+      <ul class="footer__nav">
+        <li><a href="#top">Home <span>→</span></a></li>
+        <li><a href="#renders">Architecture <span>→</span></a></li>
+        <li><a href="#websites">Websites <span>→</span></a></li>
+        <li><a href="#brands">Brands &amp; Apps <span>→</span></a></li>
+        <li><a href="#showreel">Showreel <span>→</span></a></li>
+      </ul>
+      <div class="footer__details">
+        <p class="mono label">(Contact)</p>
+        <a class="js-mail footer__mail" href="#"></a>
+        <a class="js-wa footer__phone" href="#" target="_blank" rel="noopener"></a>
+        <p class="mono label">(Based)</p>
+        <p>Medellín, Colombia — working remote, worldwide</p>
+      </div>
+    </div>
+    <div class="footer__logo" aria-hidden="true">
+      <canvas class="footer__canvas"></canvas>
+    </div>
+    <div class="footer__bottom mono">
+      <span>© <span id="year"></span> Manuel Restrepo</span>
+      <span>Nolo is my showreel</span>
+      <a href="#top" class="footer__up">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Render viewer" hidden>
+    <button class="lightbox__close mono" type="button">Close · ESC</button>
+    <button class="lightbox__nav lightbox__prev" type="button" aria-label="Previous">←</button>
+    <figure class="lightbox__fig"><img alt="" /><figcaption class="mono"></figcaption></figure>
+    <button class="lightbox__nav lightbox__next" type="button" aria-label="Next">→</button>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
