@@ -16,6 +16,19 @@
   gsap.registerPlugin(ScrollTrigger);
 
   /* ── Contact links ─────────────────────────────────────────── */
+  // /showreel is the version linked from Upwork, Fiverr and Workana: those platforms forbid
+  // off-platform contact before a contract, so it carries no WhatsApp, email or booking link.
+  const PLATFORM = /\/showreel\/?$/.test(location.pathname);
+  if (PLATFORM) {
+    document.documentElement.classList.add("platform");
+    $$(".js-wa, .js-mail, .footer__details").forEach((el) => el.parentNode.removeChild(el));
+    $$(".js-call").forEach((a) => {
+      const span = document.createElement("span");
+      span.className = a.className.replace("js-call", "") + " btn--static";
+      span.innerHTML = 'Message me on the platform <span class="btn__ico">✉</span>';
+      a.replaceWith(span);
+    });
+  }
   $$(".js-call").forEach((a) => (a.href = D.contact.call));
   $$(".js-wa").forEach((a) => { a.href = D.contact.whatsapp; if (a.classList.contains("footer__phone")) a.textContent = D.contact.phoneLabel; });
   $$(".js-mail").forEach((a) => { a.href = D.contact.email; if (a.classList.contains("footer__mail")) a.textContent = D.contact.emailLabel; });

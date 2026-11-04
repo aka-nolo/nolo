@@ -402,3 +402,8 @@ details[open] .faq__plus::after { transform: rotate(0); }
   .grain { animation: none; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* -- Platform mode (/showreel) -- */
+.btn--static { cursor: default; }
+.btn--static:hover .btn__ico { transform: none; }
+.platform .footer__top { grid-template-columns: 1fr; }
