@@ -90,6 +90,11 @@ Brand and Apps Development · Video Development.
       sube `public/` en cada push a `main`. Si algún día hay Vercel personal, `vercel.json` ya está listo.
 - [ ] Manuel: confirmar retrato, qué renders y qué videos quedan, y pasar más renders.
 - [ ] Manuel: enlace de agenda real para «Schedule a call» (hoy cae en WhatsApp).
+- [ ] **HTTPS de nolo.formwrks.co**: el certificado de GitHub Pages quedó en `authorization_created` (2026-11-04,
+      ~2 h y dos reinicios del dominio). DNS y CAA verificados bien (Let's Encrypt permitido). Revisar con
+      `GH_TOKEN=$(gh auth token --user aka-nolo) gh api repos/aka-nolo/nolo/pages --jq .https_certificate.state`; cuando
+      diga `approved`: `gh api -X PUT repos/aka-nolo/nolo/pages -F https_enforced=true` (con el mismo GH_TOKEN) y
+      agregar Nolo a Destacados de LinkedIn. Si sigue trabado al día siguiente, quitar y poner el dominio una vez más.
 - [x] `og:image` absoluta a nolo.formwrks.co. Si cambia el dominio, actualizarla en index.html.
 - [x] **nolo.formwrks.co** (2026-11-04): CNAME en el Vercel de Form (`rec_39e80b23acfea45752659db0`) → `aka-nolo.github.io`;
       dominio asignado en Pages. El hosting sigue en GitHub personal: si Form cierra, solo se mueve ese registro DNS.
