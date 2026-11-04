@@ -89,8 +89,10 @@ Brand and Apps Development · Video Development.
       sube `public/` en cada push a `main`. Si algún día hay Vercel personal, `vercel.json` ya está listo.
 - [ ] Manuel: confirmar retrato, qué renders y qué videos quedan, y pasar más renders.
 - [ ] Manuel: enlace de agenda real para «Schedule a call» (hoy cae en WhatsApp).
-- [ ] Al publicar: `og:image` con URL absoluta (hoy relativa) y dominio.
+- [x] `og:image` absoluta a aka-nolo.github.io/nolo. Si cambia el dominio, actualizarla en index.html.
+- [ ] Opcional: dominio propio (p. ej. nolo.co / manuelrestrepo.co) apuntado a Pages — requiere comprarlo Manuel.
 
 ## Log
+- 2026-11-04 — Publicado: https://aka-nolo.github.io/nolo/ (repo público, historial reescrito sin notas internas, con OK de Manuel).
 - 2026-11-04 — v1 construida y probada local (escritorio y 390 px): sin errores de carga, Vimeo reproduce los fragmentos
   en secuencia, galería con ESC/flechas/deslizar. Repo `aka-nolo/nolo` creado y pusheado.
