@@ -12,7 +12,7 @@ sonido, animaciones, UI/UX interactiva) con contenido de Manuel. «Lúcete, es m
 mejor que hemos hecho». Regla de CLAUDE.md: replicar el molde = abrir el original y listar secciones/mecanismos antes
 de escribir; lo que no tenga equivalente se inventa pero se DECLARA cuál es cuál.
 
-**Marca:** kit PRINCIPAL (no el retro): `C:/Users/manue/Downloads/Nolo_Kit_Completo/Nolo_Kit_Marca`
+**Marca:** kit PRINCIPAL (no el retro): `C:/Users/manue/OneDrive/Personal/02_Products/Nolo/02_Branding/Nolo_Brand-kit` (antes en Descargas)
 (00_Manual_de_marca, 01_Principal_02, 05_Paleta; leer LEEME.txt y ABRIR_KIT.html primero).
 
 **Cuatro tipos de trabajo** que organizan el sitio: Architectural & BIM Development · Website Development ·
