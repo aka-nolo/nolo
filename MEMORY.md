@@ -101,6 +101,10 @@ Brand and Apps Development · Video Development.
       ⚠️ `gh api` con Pages devolvió 404 con la cuenta equivocada: usar `GH_TOKEN=$(gh auth token --user aka-nolo)`.
 
 ## Log
+- 2026-11-04 — Websites: agregados **Raven** (https://conoce.raven.formwrks.co, su sitio de lanzamiento — no la app) y
+  **Gratalma** (https://gratalma.formwrks.co), pedido de Manuel. Grabados con Playwright (script en el scratchpad,
+  mismo método que `tools/`, sin clic de intro: scroll suave de 3.200 px desde el segundo 4,8). Verificado en local y
+  publicado (commit 2110f65). El HTTPS sigue en `authorization_created`: los links a clientes van con `http://`.
 - 2026-11-04 — Correcciones de Manuel: «IDEA TO IMAGE» ya no llena la pantalla (cuadro apaisado de 44vw) y usa los
   4 renders más nítidos (`GAP` en data.js); se cambiaron 3 renders flojos del carrusel por 5 mejores (medidos por
   nitidez); sitios con portada + grabación al pasar el cursor, recuadros más chicos; apps solo con isotipo sin fondo;
