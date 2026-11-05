@@ -84,6 +84,16 @@ window.NOLO = {
       year: 2026,
     },
     {
+      name: "Hotel Tayrona",
+      url: "https://tayrona.formwrks.co/",
+      cover: "sites/tayrona-cover.webp", video: "sites/tayrona.mp4", poster: "sites/tayrona-poster.jpg",
+      shows: "From the aerial view of the hotel into the place and its villas",
+      blurb: "A sales site for a jungle hotel on the Colombian Caribbean, built before the first stone: buyers pick a destination on the aerial view and fly into it.",
+      stack: "Static · AI-generated imagery · Vercel",
+      services: ["Concept", "Art direction", "Web design", "Development"],
+      year: 2026,
+    },
+    {
       name: "Gratalma",
       url: "https://gratalma.formwrks.co/",
       cover: "sites/gratalma-cover.webp", video: "sites/gratalma.mp4", poster: "sites/gratalma-poster.jpg",
