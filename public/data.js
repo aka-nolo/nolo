@@ -73,6 +73,26 @@ window.NOLO = {
       services: ["Brand", "Web design", "Development", "Back office"],
       year: 2026,
     },
+    {
+      name: "Raven",
+      url: "https://conoce.raven.formwrks.co/",
+      cover: "sites/raven-cover.webp", video: "sites/raven.mp4", poster: "sites/raven-poster.jpg",
+      shows: "The product story, from scattered chats to answers",
+      blurb: "The launch site of an AI product for construction. One guided scroll that explains what Raven does, with app screens and animated steps.",
+      stack: "Static · Vercel",
+      services: ["Product story", "Web design", "Development"],
+      year: 2026,
+    },
+    {
+      name: "Gratalma",
+      url: "https://gratalma.formwrks.co/",
+      cover: "sites/gratalma-cover.webp", video: "sites/gratalma.mp4", poster: "sites/gratalma-poster.jpg",
+      shows: "The brand intro and the story",
+      blurb: "A home bakery with a site that tastes like the product: hand-lettered, warm and playful, with orders straight to WhatsApp.",
+      stack: "Vite · TypeScript · GSAP · Vercel",
+      services: ["Art direction", "Web design", "Development"],
+      year: 2026,
+    },
   ],
 
   // Brand and Apps Development — internal demos, shown by their marks only.
